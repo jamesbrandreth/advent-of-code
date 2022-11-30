@@ -12,7 +12,7 @@ we'll end up with a loose structure like so:
 ```
 2021/
   jamesbrandreth/
-    01/
+    day-01/
       part_one.rkt
       part_two.rkt
 2022/
