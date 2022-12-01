@@ -1,1 +1,4 @@
 2022/nathans106/.venv/*
+2022/nathans106/Cargo.lock
+*.pyc
+2022/nathans106/target/*

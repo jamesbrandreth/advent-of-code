@@ -3,6 +3,7 @@ repos:
     rev: v1.0
     hooks:
     -   id: fmt
+        args: [-- --manifest-path 2022/nathans106/Cargo.toml]
     -   id: cargo-check
     -   id: clippy
 -   repo: https://github.com/pre-commit/pre-commit-hooks
