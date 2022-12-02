@@ -1,11 +1,22 @@
+files: 2022/nathans106/.*
 repos:
--   repo: https://github.com/doublify/pre-commit-rust
-    rev: v1.0
+-   repo: local
     hooks:
     -   id: fmt
-        args: [-- --manifest-path 2022/nathans106/Cargo.toml]
+        name: fmt
+        entry: python 2022/nathans106/ci/fmt.py
+        language: system
+        types: [rust]
     -   id: cargo-check
+        name: cargo-check
+        entry: python 2022/nathans106/ci/check.py
+        language: system
+        types: [rust]
     -   id: clippy
+        name: clippy
+        entry: python 2022/nathans106/ci/clippy.py
+        language: system
+        types: [rust]
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.2.0
     hooks:

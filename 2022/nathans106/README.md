@@ -19,7 +19,7 @@ I'm going to do this as a Rust and Python project. I'm primarily a C++ developer
    1. `python -m venv .venv`
    2. `source .venv/Scripts/activate`
 2. Install Python dependencies with `pip install -r requirements.txt`
-3. Install the commit hooks with `pre-commit install -c .pre-commit-config.yaml`
+3. Install the commit hooks with `pre-commit install`
 
 ## Building
 
