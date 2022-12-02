@@ -5,6 +5,3 @@ edition = "2021"
 
 [[bin]]
 name = "day-01"
-
-[dependencies]
-pyo3 = { version = "0.17.3", features = ["extension-module"] }

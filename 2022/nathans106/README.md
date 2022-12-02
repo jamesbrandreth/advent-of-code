@@ -6,7 +6,7 @@ Note all commands in this file are to be run from this folder, i.e ***2022/natha
 
 ## Approach
 
-I'm going to do this as a Rust and Python project. I'm primarily a C++ developer but Rust seems really good to me so that will handle the bulk of the logic. I'll be using Python for input parsing because I've still not found a parser better than PyParsing.
+I'm going to do this as a Rust and Python project. I'm primarily a C++ developer but Rust can't be beaten.
 
 ## Dependencies
 
