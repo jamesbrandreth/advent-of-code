@@ -5,6 +5,7 @@ pub enum Hand {
     Scissors,
 }
 
+#[derive(Debug, PartialEq)]
 pub enum Outcome {
     Win,
     Lose,
@@ -27,6 +28,26 @@ pub fn outcome(other: &Hand, you: &Hand) -> Outcome {
             Hand::Rock => Outcome::Win,
             Hand::Paper => Outcome::Lose,
             Hand::Scissors => Outcome::Draw,
+        },
+    }
+}
+
+pub fn hand(other: &Hand, outcome: &Outcome) -> Hand {
+    match other {
+        Hand::Rock => match outcome {
+            Outcome::Win => Hand::Paper,
+            Outcome::Lose => Hand::Scissors,
+            Outcome::Draw => Hand::Rock,
+        },
+        Hand::Paper => match outcome {
+            Outcome::Win => Hand::Scissors,
+            Outcome::Lose => Hand::Rock,
+            Outcome::Draw => Hand::Paper,
+        },
+        Hand::Scissors => match outcome {
+            Outcome::Win => Hand::Rock,
+            Outcome::Lose => Hand::Paper,
+            Outcome::Draw => Hand::Scissors,
         },
     }
 }
