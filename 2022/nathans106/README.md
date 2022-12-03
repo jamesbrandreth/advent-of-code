@@ -23,4 +23,4 @@ I'm going to do this as a Rust and Python project. I'm primarily a C++ developer
 
 ## Building
 
-1. Compile the Rust with `maturin develop`
+1. Compile with `cargo build`

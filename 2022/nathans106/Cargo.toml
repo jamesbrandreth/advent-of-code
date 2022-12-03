@@ -7,4 +7,4 @@ edition = "2021"
 name = "day-01"
 
 [dependencies]
-nom = "7.1.1"
+itertools = "0.10.5"
