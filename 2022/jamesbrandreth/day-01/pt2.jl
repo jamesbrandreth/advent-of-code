@@ -13,12 +13,6 @@ let i = 1
     end
 end
 
-global biggest = 0
-for n in totals
-    if n > biggest
-        global biggest = n
-    end
-end
-
-
-print(biggest)
+totals = sort(totals, rev=true)
+x = sum(totals[begin:1:3])
+print(x)
