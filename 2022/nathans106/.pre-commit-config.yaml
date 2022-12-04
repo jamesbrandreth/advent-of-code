@@ -17,6 +17,11 @@ repos:
         entry: python 2022/nathans106/ci/clippy.py
         language: system
         types: [rust]
+    -   id: test
+        name: test
+        entry: python 2022/nathans106/ci/test.py
+        language: system
+        types: [rust]
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.2.0
     hooks:
