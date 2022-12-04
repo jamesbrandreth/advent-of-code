@@ -9,5 +9,8 @@ name = "day-01"
 [[bin]]
 name = "day-02"
 
+[[bin]]
+name = "day-03"
+
 [dependencies]
 itertools = "0.10.5"
