@@ -1,5 +1,8 @@
+#![feature(iter_array_chunks)]
+
 use parser::parse;
 
+mod id_range;
 mod parser;
 
 fn main() {

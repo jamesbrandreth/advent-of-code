@@ -17,3 +17,4 @@ name = "day-04"
 
 [dependencies]
 itertools = "0.10.5"
+regex = "1.7.0"
