@@ -1,21 +1,28 @@
 use core::panic;
 
+use itertools::Itertools;
+
 use crate::item::Item;
 
 #[derive(PartialEq, Eq, Debug)]
 pub struct Rucksack {
-    section1: Vec<Item>,
-    section2: Vec<Item>,
+    pub items: Vec<Item>,
 }
 
 impl Rucksack {
-    pub fn new(section1: Vec<Item>, section2: Vec<Item>) -> Self {
-        Rucksack { section1, section2 }
+    pub fn new(items: Vec<Item>) -> Self {
+        Rucksack { items }
+    }
+
+    pub fn sections(&self) -> (&[Item], &[Item]) {
+        let section_size = self.items.len() / 2;
+        self.items.split_at(section_size)
     }
 
     pub fn common_item(&self) -> &Item {
-        for s1_item in self.section1.iter() {
-            for s2_item in self.section2.iter() {
+        let (section1, section2) = self.sections();
+        for s1_item in section1.iter() {
+            for s2_item in section2.iter() {
                 if s1_item == s2_item {
                     return s1_item;
                 }
@@ -23,5 +30,21 @@ impl Rucksack {
         }
 
         panic!("No common item");
+    }
+
+    pub fn item_types(&self) -> Vec<Item> {
+        self.items.iter().unique().cloned().collect()
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_common_item() {
+        let rucksack = Rucksack::new("vJrwpWtwJgWrhcsFMMfFFhFp".chars().collect());
+
+        assert_eq!(&'p', rucksack.common_item());
     }
 }
