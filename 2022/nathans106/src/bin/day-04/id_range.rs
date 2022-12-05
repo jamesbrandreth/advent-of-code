@@ -21,7 +21,10 @@ impl IdRange {
 }
 
 pub fn overlap(rng1: &IdRange, rng2: &IdRange) -> bool {
-    rng1.contains(&rng2.start) || rng1.contains(&rng2.end)
+    rng1.contains(&rng2.start)
+        || rng1.contains(&rng2.end)
+        || rng2.contains(&rng1.start)
+        || rng2.contains(&rng1.end)
 }
 
 pub fn fully_overlap(rng1: &IdRange, rng2: &IdRange) -> bool {
