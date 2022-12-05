@@ -15,6 +15,9 @@ name = "day-03"
 [[bin]]
 name = "day-04"
 
+[[bin]]
+name = "day-05"
+
 [dependencies]
 itertools = "0.10.5"
 regex = "1.7.0"
