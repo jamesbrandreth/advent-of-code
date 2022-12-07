@@ -1,15 +1,27 @@
 import Base
 
-function parseInstruction(s::String)
+function parseInstruction(s::String)::Instruction
     _, n, _, from, _, to = split(s," ")
     n = parse(Int64, n)
     from = parse(Int64, from)
     to = parse(Int64, to)
-    return n, from, to
+    return Instruction(n, from, to)
 end
 
 struct Ship
     stacks::Vector{Vector{Char}}
+end
+
+struct Instruction
+    number::Int64
+    from::Int64
+    to::Int64
+end
+
+function move(ship::Ship, instruction::Instruction)
+        for i in 1:instruction.number
+            push!(ship.stacks[instruction.to], pop!(ship.stacks[instruction.from]))
+        end
 end
 
 function Base.show(io::IO, s::Ship)
@@ -43,10 +55,8 @@ open("input.txt", "r") do file
 
     # Follow the instructions
     for line in lines[state_end+1:end]
-        n, from, to = parseInstruction(String(line))
-        for i in 1:n
-            push!(ship.stacks[to], pop!(ship.stacks[from]))
-        end
+        instruction = parseInstruction(String(line))
+        move(ship, instruction)
     end
 
     println(ship)
