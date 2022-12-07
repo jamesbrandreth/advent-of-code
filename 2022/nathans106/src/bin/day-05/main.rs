@@ -8,18 +8,29 @@ mod instruction;
 mod parser;
 mod supply;
 
-fn apply_instructions(supply: &mut Supply, instructions: &Vec<Instruction>) {
+fn apply_lifo(supply: &mut Supply, instructions: &Vec<Instruction>) {
     for instruction in instructions {
-        supply.apply(instruction);
+        supply.apply_lifo(instruction);
+    }
+}
+
+fn apply_batch(supply: &mut Supply, instructions: &Vec<Instruction>) {
+    for instruction in instructions {
+        supply.apply_batch(instruction);
     }
 }
 
 fn main() {
     let input = include_str!("input.txt");
-    let (mut supply, instructions) = parse(input);
-    apply_instructions(&mut supply, &instructions);
-    let tops = supply.tops();
-    println!("Tops are {tops}");
+    let (mut supply1, instructions) = parse(input);
+    let mut supply2 = supply1.clone();
+    apply_lifo(&mut supply1, &instructions);
+    let lifo_tops = supply1.tops();
+    println!("Lifo tops are {lifo_tops}");
+
+    apply_batch(&mut supply2, &instructions);
+    let batch_tops = supply2.tops();
+    println!("Lifo tops are {batch_tops}");
 }
 
 #[cfg(test)]
@@ -70,7 +81,7 @@ mod test {
             },
         ];
 
-        apply_instructions(&mut supply, &instructions);
+        apply_lifo(&mut supply, &instructions);
 
         assert_eq!(expected, supply);
     }

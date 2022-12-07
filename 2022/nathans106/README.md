@@ -38,7 +38,7 @@ I'm going to do this as a Rust and Python project. I'm primarily a C++ developer
   - [x] Part 2
 - Day 4
   - [x] Part 1
-  - [ ] Part 2
+  - [x] Part 2
 - Day 5
   - [ ] Part 1
   - [ ] Part 2
