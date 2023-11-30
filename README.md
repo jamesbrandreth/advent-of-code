@@ -4,7 +4,7 @@ Welcome to [Advent of Code](https://adventofcode.com/).
 
 ## Getting started
 
-Commit your solution attempts following this structure: `<year>/<github_username>/<day>_<language>`
+Commit your solution attempts following this structure: `<year>/<github_username>/<day>-<language>`
 
 **You have free reign** over the code structure inside your folders, but if everything goes to plan
 we'll end up with a loose structure like so:
