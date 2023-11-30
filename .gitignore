@@ -2,3 +2,6 @@
 2022/nathans106/Cargo.lock
 *.pyc
 2022/nathans106/target/*
+
+.DS_Store
+
